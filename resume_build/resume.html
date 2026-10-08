@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>Komal Jha - Resume</title>
+<style>
+@page{size:A4;margin:11mm 13mm}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Calibri,"Segoe UI",Arial,sans-serif;font-size:9.6pt;line-height:1.28;color:#111}
+h1{font-size:23pt;font-weight:500;text-align:center;letter-spacing:.2px}
+.contact{text-align:center;font-size:9.2pt;margin:2px 0 5px;color:#222}
+.contact a,.small a{color:#0b4f8a;text-decoration:none}
+.rule{border-top:1px solid #222;margin:3px 0 4px}
+h2{font-size:10.6pt;font-weight:700;margin-top:6px}
+.row{display:flex;justify-content:space-between;align-items:baseline}
+.row b{font-weight:700}
+.sub{font-style:italic}
+ul{list-style:none;margin:1px 0 3px}
+li{padding-left:14px;position:relative}
+li::before{content:"\2013";position:absolute;left:2px}
+p.sum{margin:3px 0 0}
+.proj{margin-top:4px}
+.small{font-size:9pt}
+</style></head><body>
+<h1>Komal Jha</h1>
+<div class="contact"><a href="mailto:komaljha1504@gmail.com">komaljha1504@gmail.com</a> &nbsp;|&nbsp; <a href="https://komal-jha.vercel.app">Portfolio: komal-jha.vercel.app</a> &nbsp;|&nbsp; <a href="https://www.linkedin.com/in/komaljha1504">LinkedIn: linkedin.com/in/komaljha1504</a> &nbsp;|&nbsp; <a href="https://github.com/Komaljha1504">GitHub: github.com/Komaljha1504</a></div>
+<div class="rule"></div>
+<p class="sum">Final-year Computer Science student at VIT Vellore who builds software across the stack, from real-time web apps and API infrastructure to machine-learning systems. Frontend internship at Tech Mahindra on an enterprise banking application. Projects are tested, load-checked and documented, with honest results.</p>
+
+<h2>Education</h2><div class="rule"></div>
+<div class="row"><span><b>Vellore Institute of Technology</b> &mdash; <i>B.Tech in Computer Science (CGPA: 7.51)</i></span><b>2023 &ndash; 2027</b></div>
+<div class="row"><span><b>Saint Francis School B.Deoghar, Deoghar</b> <i>(Class X: 95.4%)</i></span><b>2021</b></div>
+<div class="row"><span><b>Swarajya Senior Secondary School, Alwar</b> <i>(Class XII: 77.8%)</i></span><b>2023</b></div>
+
+<h2>Experience</h2><div class="rule"></div>
+<div class="row"><b>Tech Mahindra</b><b>May 2025 &ndash; July 2025</b></div>
+<div class="sub">Frontend Development Intern</div>
+<ul>
+<li>Contributed to frontend development of a Corporate Banking Solutions app for a PSU bank using Angular, HTML and CSS.</li>
+<li>Improved UI consistency and responsiveness by resolving styling issues across existing application screens.</li>
+<li>Collaborated with mentors and team members on enhancements aligned with business requirements, following Agile practices.</li>
+</ul>
+
+<h2>Projects</h2><div class="rule"></div>
+
+<div class="proj"><div class="row"><span><b>GateKeeper &ndash; Multi-Tenant API Gateway &amp; Rate Limiter</b> &nbsp;<span class="small">| <a href="https://github.com/Komaljha1504/gatekeeper">Code</a> &middot; <a href="https://gatekeeper-frontend-two.vercel.app">Live demo</a></span></span><b>2026</b></div>
+<ul>
+<li>Engineered a token-bucket rate limiter as an atomic Redis Lua script; load-tested so 20 concurrent requests always give the exact allowed / rejected split (no race conditions).</li>
+<li>Built per-tenant monthly quotas in the same atomic Redis round-trip, plus SHA-256 hashed API keys (shown once) with instant revocation.</li>
+<li>Built a live analytics dashboard (React, Recharts) for traffic and per-tenant quota usage. Tech: Node.js, Redis, PostgreSQL, React.</li>
+</ul></div>
+
+<div class="proj"><div class="row"><span><b>SyncBoard &ndash; Real-Time Collaborative Kanban Board</b> &nbsp;<span class="small">| <a href="https://github.com/Komaljha1504/syncboard">Code</a> &middot; <a href="https://syncboard-kohl.vercel.app">Live demo</a></span></span><b>2026</b></div>
+<ul>
+<li>Built a MERN Kanban board with Socket.IO: drag-and-drop moves and live cursors update instantly for all viewers.</li>
+<li>Implemented 3-tier role-based access control enforced on both REST and WebSocket layers, closing a live-session access gap.</li>
+<li>Designed the UI from scratch with a custom design system; deployed on Render and Vercel.</li>
+</ul></div>
+
+<div class="proj"><div class="row"><span><b>StreamVault &ndash; Video Upload &amp; Streaming Platform</b> &nbsp;<span class="small">| <a href="https://github.com/Komaljha1504/streamvault">Code</a></span></span><b>2026</b></div>
+<ul>
+<li>Built an upload pipeline with background FFmpeg transcoding into 360p / 480p / 720p renditions, stored in MongoDB GridFS, with range-request streaming and adaptive quality.</li>
+<li>Designed a watch-time analytics dashboard showing viewer drop-off; 16 end-to-end tests pass. Tech: React, Node.js, MongoDB.</li>
+</ul></div>
+
+<div class="proj"><div class="row"><span><b>Dental X-ray Caries Classifier (ML)</b> &nbsp;<span class="small">| <a href="https://github.com/Komaljha1504/dental-xray-classifier">Code</a> &middot; <a href="https://komal-dental-xray.streamlit.app">Live demo</a></span></span><b>2026</b></div>
+<ul>
+<li>Fine-tuned an ImageNet ResNet-18 on 5,000 panoramic X-rays: ROC-AUC 0.74 (95% CI 0.70 to 0.77) and 65.9% accuracy on a held-out set of 750 unseen images, with bootstrap confidence intervals.</li>
+<li>Implemented Grad-CAM from scratch for explainability; audited the data (no healthy images, one source shortcut removed) and documented limitations. Tech: PyTorch, Gradio.</li>
+</ul></div>
+
+<div class="proj"><div class="row"><span><b>Heart Disease Prediction Pipeline (ML)</b> &nbsp;<span class="small">| <a href="https://github.com/Komaljha1504/heart-disease-ml-pipeline">Code</a> &middot; <a href="https://komal-heart-disease.streamlit.app">Live demo</a></span></span><b>2026</b></div>
+<ul>
+<li>Built a leak-free scikit-learn pipeline and compared 5 models under identical repeated stratified CV; best (logistic regression) ROC-AUC 0.92 &plusmn; 0.04, accuracy 85.8%. Tuned the top 2 with nested CV and explained results with permutation importance.</li>
+<li>Reported negative results honestly (tuning and engineered features gave no gain). Tech: Python, scikit-learn, XGBoost, Pandas.</li>
+</ul></div>
+
+<div class="proj"><div class="row"><span><b>CareerVault &ndash; Job Application &amp; Career Management Platform</b> &nbsp;<span class="small">| <a href="https://github.com/Komaljha1504/careervault-job-tracker">Code</a></span></span><b>2026</b></div>
+<ul>
+<li>Built a MERN platform tracking job applications and interviews, with a Recharts dashboard, search, filters and pagination.</li>
+<li>Implemented JWT authentication, bcrypt password hashing and RESTful CRUD APIs on MongoDB Atlas.</li>
+</ul></div>
+
+<h2>Skills</h2><div class="rule"></div>
+<ul>
+<li><b>Languages:</b> Java, Python, JavaScript, SQL, C++, C</li>
+<li><b>Frameworks &amp; Libraries:</b> React.js, Node.js, Express.js, Angular, FastAPI, PyTorch, scikit-learn</li>
+<li><b>Databases &amp; Storage:</b> MongoDB, PostgreSQL, Redis</li>
+<li><b>Tools &amp; Platforms:</b> Git, Postman, Socket.IO, Render, Vercel, MongoDB Atlas</li>
+<li><b>Core Concepts:</b> Data Structures &amp; Algorithms, REST APIs, JWT Authentication, WebSockets, System Design, Concurrency, Rate Limiting, RBAC, Transfer Learning</li>
+</ul>
+
+<h2>Certifications</h2><div class="rule"></div>
+<div class="row"><span><b>AWS Certified Cloud Practitioner</b> &mdash; Amazon Web Services</span><b>2026</b></div>
+<div class="row"><span><b>Data Structures &amp; Algorithms</b> &mdash; Udemy</span><b>2026</b></div>
+</body></html>

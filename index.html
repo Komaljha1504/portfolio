@@ -1,0 +1,420 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Komal Jha | Software Engineer</title>
+<meta name="description" content="Komal Jha, final-year CS student at VIT Vellore. Software engineer building real-time systems, API infrastructure and machine-learning projects.">
+<meta property="og:title" content="Komal Jha | Software Engineer">
+<meta property="og:description" content="Real-time apps, a race-safe API gateway, a video platform and an explainable ML classifier. Built, tested and deployed.">
+<meta name="theme-color" content="#0a1428">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%230f9b8e'/%3E%3Ctext x='32' y='43' font-size='34' font-family='Arial' font-weight='700' text-anchor='middle' fill='white'%3EK%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#070d1c; --bg2:#0b1630; --card:#0f1b38; --line:rgba(255,255,255,.09);
+  --text:#e8eefc; --muted:#9db0d3; --teal:#2dd4bf; --cyan:#38bdf8; --violet:#8b7cff; --amber:#fbbf24; --lime:#bef264;
+  --grad:linear-gradient(120deg,#2dd4bf 0%,#38bdf8 45%,#8b7cff 100%);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:Inter,system-ui,sans-serif;line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0;z-index:-1;background:
+  radial-gradient(900px 500px at 85% -5%,rgba(139,124,255,.22),transparent 60%),
+  radial-gradient(800px 500px at -5% 20%,rgba(45,212,191,.16),transparent 60%),
+  radial-gradient(700px 500px at 60% 100%,rgba(56,189,248,.10),transparent 60%);}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1160px;margin:0 auto;padding:0 24px}
+h1,h2,h3{font-family:"Space Grotesk",Inter,sans-serif;letter-spacing:-.02em;line-height:1.1}
+.grad{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.mono{font-family:"JetBrains Mono",monospace}
+
+/* nav */
+nav{position:sticky;top:0;z-index:50;backdrop-filter:blur(14px);background:rgba(7,13,28,.72);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{font-family:"Space Grotesk";font-weight:700;font-size:20px;display:flex;align-items:center;gap:10px}
+.logo i{width:30px;height:30px;border-radius:9px;background:var(--grad);display:grid;place-items:center;color:#06101f;font-style:normal;font-size:16px}
+nav ul{display:flex;gap:28px;list-style:none;font-size:14px;color:var(--muted)}
+nav ul a:hover{color:#fff}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 22px;border-radius:12px;font-weight:600;font-size:15px;transition:.2s;cursor:pointer;border:1px solid transparent}
+.btn.primary{background:var(--grad);color:#06101f;box-shadow:0 10px 30px -10px rgba(45,212,191,.6)}
+.btn.primary:hover{transform:translateY(-2px);box-shadow:0 14px 34px -10px rgba(45,212,191,.8)}
+.btn.ghost{border-color:var(--line);background:rgba(255,255,255,.04)}
+.btn.ghost:hover{background:rgba(255,255,255,.09);transform:translateY(-2px)}
+.btn.sm{padding:8px 14px;font-size:13px;border-radius:10px}
+
+/* hero */
+.hero{padding:88px 0 56px;display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;padding:7px 14px;border:1px solid var(--line);border-radius:999px;background:rgba(255,255,255,.04);font-size:13px;color:var(--muted)}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--lime);box-shadow:0 0 0 0 rgba(190,242,100,.7);animation:pulse 2s infinite}
+@keyframes pulse{70%{box-shadow:0 0 0 9px rgba(190,242,100,0)}100%{box-shadow:0 0 0 0 rgba(190,242,100,0)}}
+.hero h1{font-size:clamp(40px,6.4vw,76px);margin:22px 0 20px;font-weight:700}
+.hero p.lead{font-size:19px;color:var(--muted);max-width:560px}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+.links{display:flex;gap:18px;margin-top:26px;font-size:14px;color:var(--muted)}
+.links a:hover{color:var(--teal)}
+
+/* hero visual: live token bucket */
+.panel{background:linear-gradient(160deg,rgba(255,255,255,.07),rgba(255,255,255,.02));border:1px solid var(--line);border-radius:22px;padding:22px;box-shadow:0 30px 80px -30px rgba(0,0,0,.7)}
+.panel-top{display:flex;justify-content:space-between;align-items:center;font-size:12px;color:var(--muted);margin-bottom:14px}
+.lights i{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:6px;background:#ff5f57}
+.lights i:nth-child(2){background:#febc2e}.lights i:nth-child(3){background:#28c840}
+.bucket{display:grid;grid-template-columns:repeat(10,1fr);gap:6px;margin:6px 0 14px}
+.tok{aspect-ratio:1;border-radius:8px;background:rgba(45,212,191,.9);box-shadow:0 0 14px rgba(45,212,191,.5);transition:.35s}
+.tok.off{background:rgba(255,255,255,.08);box-shadow:none}
+.log{font-family:"JetBrains Mono",monospace;font-size:12.5px;line-height:1.9;height:132px;overflow:hidden;color:#b6c6e6}
+.log .ok{color:var(--lime)}.log .no{color:#ff7a8a}
+.panel-foot{display:flex;justify-content:space-between;margin-top:12px;font-size:12px;color:var(--muted)}
+
+/* stats */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin:30px 0 20px}
+.stat{padding:22px;border:1px solid var(--line);border-radius:18px;background:rgba(255,255,255,.03)}
+.stat b{font-family:"Space Grotesk";font-size:40px;display:block;line-height:1}
+.stat span{font-size:13.5px;color:var(--muted)}
+
+/* sections */
+section{padding:84px 0}
+.kicker{font-size:13px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--teal)}
+h2{font-size:clamp(30px,4vw,46px);margin:10px 0 14px}
+.sub{color:var(--muted);max-width:640px;font-size:17px}
+
+/* projects */
+.projects{display:grid;grid-template-columns:repeat(2,1fr);gap:26px;margin-top:44px}
+.card{position:relative;background:var(--card);border:1px solid var(--line);border-radius:22px;overflow:hidden;display:flex;flex-direction:column;transition:.3s}
+.card:hover{transform:translateY(-6px);border-color:rgba(45,212,191,.45);box-shadow:0 30px 70px -30px rgba(45,212,191,.35)}
+.shot{position:relative;aspect-ratio:16/10;overflow:hidden;background:#050a16;border-bottom:1px solid var(--line)}
+.shot .bar{position:absolute;top:0;left:0;right:0;height:26px;background:rgba(10,18,40,.92);z-index:2;display:flex;align-items:center;padding:0 12px;gap:6px}
+.shot .bar i{width:8px;height:8px;border-radius:50%;background:#ff5f57}.shot .bar i:nth-child(2){background:#febc2e}.shot .bar i:nth-child(3){background:#28c840}
+.shot .bar em{margin-left:10px;font-style:normal;font-size:11px;color:var(--muted);font-family:"JetBrains Mono"}
+.shot img{width:100%;height:100%;object-fit:cover;object-position:top;margin-top:26px;transition:transform .6s}
+.card:hover .shot img{transform:scale(1.04)}
+.badge{position:absolute;top:38px;right:12px;z-index:3;padding:5px 11px;border-radius:999px;font-size:11.5px;font-weight:600;backdrop-filter:blur(8px)}
+.badge.live{background:rgba(7,13,28,.82);color:var(--lime);border:1px solid rgba(190,242,100,.4)}
+.badge.code{background:rgba(7,13,28,.82);color:var(--amber);border:1px solid rgba(251,191,36,.4)}
+.body{padding:24px;display:flex;flex-direction:column;gap:12px;flex:1}
+.body h3{font-size:24px}
+.body p{color:var(--muted);font-size:15px}
+.pts{list-style:none;display:grid;gap:7px;font-size:14px}
+.pts li{position:relative;padding-left:18px;color:#cdd9f3}
+.pts li::before{content:"";position:absolute;left:0;top:9px;width:7px;height:7px;border-radius:2px;background:var(--grad)}
+.tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:2px}
+.tags span{padding:4px 10px;border-radius:8px;font-size:12px;background:rgba(255,255,255,.06);border:1px solid var(--line);color:#c4d2ee}
+.actions{display:flex;gap:10px;margin-top:auto;padding-top:10px;flex-wrap:wrap}
+.mock{display:grid;place-items:center;height:100%;padding:44px 22px 18px;background:linear-gradient(160deg,#0e1a38,#0a1226)}
+.chart{display:flex;align-items:flex-end;gap:10px;height:120px;width:100%;max-width:340px}
+.chart i{flex:1;border-radius:6px 6px 0 0;background:var(--grad);opacity:.9;animation:grow 1.6s ease both}
+@keyframes grow{from{transform:scaleY(0);transform-origin:bottom}}
+.pillrow{display:flex;gap:8px;margin-top:14px;flex-wrap:wrap;justify-content:center}
+.pillrow span{font-size:11.5px;padding:4px 10px;border-radius:999px;border:1px solid var(--line);background:rgba(255,255,255,.05)}
+.pillrow .a{color:var(--lime)}.pillrow .b{color:var(--cyan)}.pillrow .c{color:var(--amber)}
+
+/* ML feature */
+.ml{display:grid;grid-template-columns:1fr 1fr;gap:34px;margin-top:44px;padding:30px;border:1px solid var(--line);border-radius:26px;background:linear-gradient(160deg,rgba(45,212,191,.09),rgba(139,124,255,.07))}
+.ml img{width:100%;border-radius:14px;border:1px solid var(--line);background:#fff}
+.ml .imgs{display:grid;gap:14px}
+.kpis{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin:18px 0}
+.kpi{padding:14px 16px;border-radius:14px;background:rgba(7,13,28,.55);border:1px solid var(--line)}
+.kpi b{font-family:"Space Grotesk";font-size:28px;display:block;line-height:1.1}
+.kpi span{font-size:12.5px;color:var(--muted)}
+.honest{font-size:14px;color:#cdd9f3;border-left:3px solid var(--amber);padding:6px 0 6px 14px;margin-top:10px}
+
+/* skills */
+.skills{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:40px}
+.skill{padding:22px;border:1px solid var(--line);border-radius:18px;background:rgba(255,255,255,.03)}
+.skill h3{font-size:17px;margin-bottom:12px;color:var(--teal)}
+.skill div{display:flex;flex-wrap:wrap;gap:7px}
+.skill span{padding:5px 11px;border-radius:9px;font-size:13px;background:rgba(255,255,255,.06);border:1px solid var(--line)}
+
+/* timeline */
+.tl{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:40px}
+.item{padding:24px;border:1px solid var(--line);border-radius:20px;background:rgba(255,255,255,.03)}
+.item small{color:var(--teal);font-weight:600;font-size:12.5px;letter-spacing:.08em;text-transform:uppercase}
+.item h3{font-size:21px;margin:6px 0 4px}
+.item p,.item li{color:var(--muted);font-size:14.5px}
+.item ul{padding-left:18px;margin-top:8px}
+
+/* contact */
+.contact{text-align:center;padding:60px 28px;border:1px solid var(--line);border-radius:28px;background:radial-gradient(600px 300px at 50% 0,rgba(45,212,191,.2),transparent 70%),rgba(255,255,255,.03)}
+.contact h2{font-size:clamp(32px,5vw,56px)}
+.contact .cta{justify-content:center}
+footer{padding:36px 0 50px;color:var(--muted);font-size:13.5px;text-align:center}
+
+.reveal{opacity:0;transform:translateY(26px);transition:.8s cubic-bezier(.2,.7,.2,1)}
+.reveal.in{opacity:1;transform:none}
+
+@media(max-width:900px){
+  .hero,.ml,.tl{grid-template-columns:1fr}
+  .projects,.skills{grid-template-columns:1fr}
+  .stats{grid-template-columns:repeat(2,1fr)}
+  nav ul{display:none}
+  .hero{padding-top:56px}
+}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+
+<nav><div class="wrap">
+  <a href="#top" class="logo"><i>K</i>Komal Jha</a>
+  <ul><li><a href="#work">Work</a></li><li><a href="#ml">ML</a></li><li><a href="#skills">Skills</a></li><li><a href="#about">About</a></li></ul>
+  <a class="btn primary sm" href="#contact">Contact</a>
+</div></nav>
+
+<main id="top">
+<div class="wrap">
+  <header class="hero">
+    <div>
+      <span class="eyebrow"><span class="dot"></span>Final-year CS at VIT Vellore &middot; open to full-time roles 2027</span>
+      <h1>I build systems that <span class="grad">hold up under load</span>.</h1>
+      <p class="lead">Software engineer who builds across the stack, from polished interfaces and real-time backends to API infrastructure and machine learning, then tests it until it breaks and writes down what I found.</p>
+      <div class="cta">
+        <a class="btn primary" href="#work">See my work &rarr;</a>
+        <a class="btn ghost" href="assets/Komal_Jha_Resume.pdf" target="_blank" rel="noopener">Resume</a>
+        <a class="btn ghost" href="https://github.com/Komaljha1504" target="_blank" rel="noopener">GitHub</a>
+        <a class="btn ghost" href="https://www.linkedin.com/in/komaljha1504" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+    <div class="panel" aria-label="Animated demo of a token-bucket rate limiter">
+      <div class="panel-top"><span class="lights"><i></i><i></i><i></i></span><span class="mono">gatekeeper &middot; token bucket</span></div>
+      <div class="bucket" id="bucket"></div>
+      <div class="log" id="log"></div>
+      <div class="panel-foot"><span>10 tokens &middot; refills over time</span><span class="mono" id="rate">allowed 0 &middot; rejected 0</span></div>
+    </div>
+  </header>
+
+  <div class="stats reveal">
+    <div class="stat"><b class="grad" data-n="6">0</b><span>projects built, tested and documented</span></div>
+    <div class="stat"><b class="grad" data-n="16" data-s="/16">0</b><span>end-to-end tests passing on StreamVault</span></div>
+    <div class="stat"><b class="grad" data-n="0" data-s="" data-fix="race">0</b><span>over-limit requests let through by GateKeeper's atomic Redis limiter in load tests</span></div>
+    <div class="stat"><b class="grad" data-n="0.74" data-d="2">0</b><span>held-out ROC-AUC on the dental X-ray model (750 unseen images)</span></div>
+  </div>
+</div>
+
+<section id="work"><div class="wrap">
+  <div class="kicker reveal">Selected work</div>
+  <h2 class="reveal">Things I have built, tested and shipped.</h2>
+  <p class="sub reveal">Each project has its code and a write-up on GitHub, and a live demo where one is hosted.</p>
+
+  <div class="projects">
+
+    <article class="card reveal">
+      <div class="shot"><div class="bar"><i></i><i></i><i></i><em>gatekeeper-frontend-two.vercel.app</em></div><span class="badge live">Live demo</span>
+        <img src="assets/shot_gatekeeper.png" alt="GateKeeper admin sign-in screen" loading="lazy"></div>
+      <div class="body">
+        <h3>GateKeeper</h3>
+        <p>Multi-tenant API gateway and rate limiter. The hard part: two requests must never spend the same token.</p>
+        <ul class="pts">
+          <li>Token bucket written as one <b>atomic Redis Lua script</b>, so concurrent requests cannot race</li>
+          <li>Proven under load: 20 simultaneous requests give an exact allowed / rejected split, every run</li>
+          <li>SHA-256 hashed API keys shown once, instant revocation, per-tenant quotas, live analytics</li>
+        </ul>
+        <div class="tags"><span>Node.js</span><span>Redis + Lua</span><span>PostgreSQL</span><span>React</span><span>Recharts</span></div>
+        <div class="actions">
+          <a class="btn primary sm" href="https://gatekeeper-frontend-two.vercel.app" target="_blank" rel="noopener">Live demo</a>
+          <a class="btn ghost sm" href="https://github.com/Komaljha1504/gatekeeper" target="_blank" rel="noopener">Code &amp; write-up</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card reveal">
+      <div class="shot"><div class="bar"><i></i><i></i><i></i><em>syncboard-kohl.vercel.app</em></div><span class="badge live">Live demo</span>
+        <img src="assets/shot_syncboard.png" alt="SyncBoard sign-in screen" loading="lazy"></div>
+      <div class="body">
+        <h3>SyncBoard</h3>
+        <p>Real-time collaborative Kanban board. Open it in two tabs and watch cursors and cards move live.</p>
+        <ul class="pts">
+          <li>Socket.IO rooms: drag-and-drop and live cursors sync instantly for every viewer</li>
+          <li>3-tier role-based access enforced on both REST <i>and</i> WebSocket layers, closing a live-session gap</li>
+          <li>Custom design system built from scratch, no component library</li>
+        </ul>
+        <div class="tags"><span>React 19</span><span>Socket.IO</span><span>Express</span><span>MongoDB</span><span>Tailwind v4</span></div>
+        <div class="actions">
+          <a class="btn primary sm" href="https://syncboard-kohl.vercel.app" target="_blank" rel="noopener">Live demo</a>
+          <a class="btn ghost sm" href="https://github.com/Komaljha1504/syncboard" target="_blank" rel="noopener">Code</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card reveal">
+      <div class="shot"><div class="bar"><i></i><i></i><i></i><em>streamvault</em></div><span class="badge code">Code &amp; screenshots</span>
+        <img src="assets/shot_streamvault.png" alt="StreamVault sign-in screen showing transcoding and drop-off cards" loading="lazy"></div>
+      <div class="body">
+        <h3>StreamVault</h3>
+        <p>Video upload and streaming platform with background transcoding and a viewer drop-off dashboard.</p>
+        <ul class="pts">
+          <li>FFmpeg transcodes each upload into 360p / 480p / 720p in the background</li>
+          <li>Range streaming with adaptive quality; videos stored in MongoDB GridFS</li>
+          <li>Watch-time analytics showing where viewers drop off; <b>16 / 16</b> end-to-end tests pass</li>
+        </ul>
+        <div class="tags"><span>React</span><span>Node.js</span><span>FFmpeg</span><span>MongoDB GridFS</span><span>Range requests</span></div>
+        <div class="actions">
+          <a class="btn primary sm" href="https://github.com/Komaljha1504/streamvault" target="_blank" rel="noopener">Code &amp; write-up</a>
+          <a class="btn ghost sm" href="https://streamvault-mu.vercel.app" target="_blank" rel="noopener">Front-end</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card reveal">
+      <div class="shot"><div class="bar"><i></i><i></i><i></i><em>careervault</em></div><span class="badge code">Code</span>
+        <div class="mock">
+          <div style="width:100%;max-width:340px">
+            <div class="chart"><i style="height:38%"></i><i style="height:62%;animation-delay:.1s"></i><i style="height:48%;animation-delay:.2s"></i><i style="height:86%;animation-delay:.3s"></i><i style="height:58%;animation-delay:.4s"></i><i style="height:74%;animation-delay:.5s"></i></div>
+            <div class="pillrow"><span class="a">Applied</span><span class="b">Interview</span><span class="c">Offer</span></div>
+          </div>
+        </div></div>
+      <div class="body">
+        <h3>CareerVault</h3>
+        <p>Job-application tracker and analytics dashboard, built end to end on the MERN stack.</p>
+        <ul class="pts">
+          <li>Interactive Recharts dashboard with status tracking, search, filters and pagination</li>
+          <li>JWT authentication, bcrypt password hashing, RESTful CRUD on MongoDB Atlas</li>
+          <li>Mobile-responsive glassmorphic dark UI</li>
+        </ul>
+        <div class="tags"><span>React</span><span>Express</span><span>MongoDB Atlas</span><span>JWT</span><span>Recharts</span></div>
+        <div class="actions">
+          <a class="btn primary sm" href="https://github.com/Komaljha1504/careervault-job-tracker" target="_blank" rel="noopener">Code &amp; write-up</a>
+        </div>
+      </div>
+    </article>
+
+  </div>
+
+  <!-- ML feature -->
+  <div class="ml reveal" id="ml">
+    <div>
+      <div class="kicker">Machine learning</div>
+      <h2 style="margin-top:8px">Dental X-ray classifier</h2>
+      <p class="sub" style="font-size:16px">ResNet-18 transfer learning that flags <b>caries</b> on panoramic X-rays, with <b>Grad-CAM heatmaps</b> showing where the model looked. Trained on a laptop CPU, evaluated on a held-out test set with confidence intervals.</p>
+      <div class="kpis">
+        <div class="kpi"><b class="grad">0.74</b><span>ROC-AUC (95% CI 0.70 to 0.77)</span></div>
+        <div class="kpi"><b class="grad">65.9%</b><span>accuracy on 750 unseen images</span></div>
+        <div class="kpi"><b class="grad">5,000</b><span>X-rays, stratified 70/15/15 split</span></div>
+        <div class="kpi"><b class="grad">2</b><span>data-quality traps found and fixed</span></div>
+      </div>
+      <p class="honest">Honest result: clearly better than chance, but it misses about 4 in 10 caries images. The write-up explains why (resolution loss, no healthy X-rays in the data, a source shortcut I removed) rather than polishing the number.</p>
+      <div class="cta" style="margin-top:20px">
+        <a class="btn primary sm" href="https://github.com/Komaljha1504/dental-xray-classifier" target="_blank" rel="noopener">Code &amp; full report</a>
+        <a class="btn ghost sm" href="https://komal-dental-xray.streamlit.app" target="_blank" rel="noopener">Live demo</a>
+      </div>
+      <div class="tags" style="margin-top:16px"><span>PyTorch</span><span>Transfer learning</span><span>Grad-CAM from scratch</span><span>Gradio</span><span>Bootstrap CIs</span></div>
+    </div>
+    <div class="imgs">
+      <img src="assets/dental_gradcam.png" alt="Grad-CAM heatmaps on correct and incorrect predictions" loading="lazy">
+      <img src="assets/dental_eval.png" alt="Confusion matrix and ROC curve on the test set" loading="lazy">
+    </div>
+  </div>
+
+  <!-- ML feature 2 -->
+  <div class="ml reveal" style="margin-top:26px">
+    <div class="imgs">
+      <img src="assets/heart_models.png" alt="Cross-validated ROC-AUC of five models" loading="lazy">
+      <img src="assets/heart_importance.png" alt="Permutation feature importance of the final model" loading="lazy">
+    </div>
+    <div>
+      <div class="kicker">Machine learning &middot; tabular</div>
+      <h2 style="margin-top:8px">Heart disease prediction pipeline</h2>
+      <p class="sub" style="font-size:16px">Try-it-yourself demo plus a leak-free scikit-learn pipeline on the UCI Heart Disease data: five models compared under identical repeated cross-validation, the top two tuned with <b>nested CV</b>, and permutation importance on held-out folds.</p>
+      <div class="kpis">
+        <div class="kpi"><b class="grad">0.92</b><span>ROC-AUC &plusmn; 0.04 (15 CV splits)</span></div>
+        <div class="kpi"><b class="grad">85.8%</b><span>accuracy, logistic regression</span></div>
+        <div class="kpi"><b class="grad">5</b><span>models, same folds</span></div>
+        <div class="kpi"><b class="grad">91%</b><span>specificity, 79% sensitivity (out-of-fold)</span></div>
+      </div>
+      <p class="honest">Honest result: the simplest model won, and neither tuning nor my four engineered features improved it. I report that instead of hiding it. Only 303 patients, so intervals are wide.</p>
+      <div class="cta" style="margin-top:20px">
+        <a class="btn primary sm" href="https://github.com/Komaljha1504/heart-disease-ml-pipeline" target="_blank" rel="noopener">Notebook &amp; code</a>
+        <a class="btn ghost sm" href="https://komal-heart-disease.streamlit.app" target="_blank" rel="noopener">Live demo</a>
+      </div>
+      <div class="tags" style="margin-top:16px"><span>scikit-learn</span><span>XGBoost</span><span>Nested CV</span><span>Permutation importance</span><span>Pandas</span></div>
+    </div>
+  </div>
+</div></section>
+
+<section id="skills"><div class="wrap">
+  <div class="kicker reveal">Toolbox</div>
+  <h2 class="reveal">What I work with.</h2>
+  <div class="skills">
+    <div class="skill reveal"><h3>Languages</h3><div><span>JavaScript</span><span>Python</span><span>Java</span><span>SQL</span><span>C++</span><span>C</span></div></div>
+    <div class="skill reveal"><h3>Frontend</h3><div><span>React</span><span>Angular</span><span>Tailwind CSS</span><span>Recharts</span><span>Vite</span><span>HTML / CSS</span></div></div>
+    <div class="skill reveal"><h3>Backend</h3><div><span>Node.js</span><span>Express</span><span>FastAPI</span><span>REST</span><span>WebSockets</span><span>JWT / RBAC</span></div></div>
+    <div class="skill reveal"><h3>Data</h3><div><span>MongoDB</span><span>PostgreSQL</span><span>Redis (Lua)</span><span>GridFS</span></div></div>
+    <div class="skill reveal"><h3>ML</h3><div><span>PyTorch</span><span>scikit-learn</span><span>Grad-CAM</span><span>Transfer learning</span><span>RAG &amp; embeddings</span></div></div>
+    <div class="skill reveal"><h3>Cloud &amp; tools</h3><div><span>AWS (Cloud Practitioner)</span><span>Render</span><span>Vercel</span><span>Git</span><span>Postman</span></div></div>
+  </div>
+</div></section>
+
+<section id="about"><div class="wrap">
+  <div class="kicker reveal">Background</div>
+  <h2 class="reveal">Experience &amp; education.</h2>
+  <div class="tl">
+    <div class="item reveal">
+      <small>May &ndash; Jul 2025</small>
+      <h3>Frontend Development Intern, Tech Mahindra</h3>
+      <p>Corporate banking solution for a PSU bank.</p>
+      <ul><li>Built and fixed Angular, HTML and CSS screens in an enterprise codebase</li><li>Improved UI consistency and responsiveness across existing screens</li><li>Worked in Agile teams with mentors on business-driven enhancements</li></ul>
+    </div>
+    <div class="item reveal">
+      <small>2023 &ndash; 2027</small>
+      <h3>B.Tech Computer Science, VIT Vellore</h3>
+      <p>CGPA 7.51. Final year.</p>
+      <ul><li>AWS Certified Cloud Practitioner (2026)</li><li>Data Structures &amp; Algorithms course, Udemy (2026)</li><li>Distributed systems, concurrency and system design through the projects above</li></ul>
+    </div>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <div class="contact reveal" id="contact">
+    <div class="kicker">Let's talk</div>
+    <h2>Looking for a team that ships.</h2>
+    <p class="sub" style="margin:0 auto 26px">I am looking for a full-time role in software engineering or AI/ML starting 2027, and I am open to internships before then. The fastest way to reach me is email.</p>
+    <div class="cta">
+      <a class="btn primary" href="mailto:komaljha1504@gmail.com">komaljha1504@gmail.com</a>
+      <a class="btn ghost" href="assets/Komal_Jha_Resume.pdf" target="_blank" rel="noopener">Resume (PDF)</a>
+      <a class="btn ghost" href="https://www.linkedin.com/in/komaljha1504" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="btn ghost" href="https://github.com/Komaljha1504" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </div>
+</div></section>
+</main>
+
+<footer><div class="wrap">&copy; 2026 Komal Jha</div></footer>
+
+<script>
+// scroll reveal
+const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { threshold: .12 });
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+// stat counters
+const cio = new IntersectionObserver(es => es.forEach(e => {
+  if (!e.isIntersecting) return; cio.unobserve(e.target);
+  const el = e.target, to = parseFloat(el.dataset.n), d = +(el.dataset.d || 0), s = el.dataset.s || '';
+  const t0 = performance.now();
+  (function step(t) { const p = Math.min(1, (t - t0) / 1100); el.textContent = (to * (1 - Math.pow(1 - p, 3))).toFixed(d) + (p === 1 ? s : ''); if (p < 1) requestAnimationFrame(step); })(t0);
+}), { threshold: .6 });
+document.querySelectorAll('[data-n]').forEach(el => cio.observe(el));
+
+// live token-bucket demo (illustrative simulation of the algorithm GateKeeper implements)
+const CAP = 10, bucket = document.getElementById('bucket'), log = document.getElementById('log'), rate = document.getElementById('rate');
+bucket.innerHTML = '<div class="tok"></div>'.repeat(CAP);
+const toks = [...bucket.children];
+let tokens = CAP, allowed = 0, rejected = 0, n = 0;
+const paths = ['/v1/orders', '/v1/users', '/v1/search', '/v1/billing', '/v1/ping'];
+function paint() { toks.forEach((t, i) => t.classList.toggle('off', i >= tokens)); rate.textContent = `allowed ${allowed} · rejected ${rejected}`; }
+function line(ok, p) {
+  const d = document.createElement('div');
+  d.innerHTML = `${ok ? '<span class="ok">200 OK  </span>' : '<span class="no">429 LIMIT</span>'} &nbsp;GET ${p}`;
+  log.prepend(d); while (log.children.length > 7) log.lastChild.remove();
+}
+function request() {
+  const p = paths[n++ % paths.length];
+  if (tokens > 0) { tokens--; allowed++; line(true, p); } else { rejected++; line(false, p); }
+  paint();
+}
+function burst() { let i = 0; const id = setInterval(() => { request(); if (++i >= 14) clearInterval(id); }, 110); }
+setInterval(() => { if (tokens < CAP) { tokens++; paint(); } }, 520);
+paint(); setTimeout(burst, 600); setInterval(burst, 7000);
+</script>
+</body>
+</html>
