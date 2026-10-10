@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>Komal Jha - AI Engineer Resume</title>
+<style>
+@page{size:A4;margin:11mm 13mm}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Calibri,"Segoe UI",Arial,sans-serif;font-size:10.1pt;line-height:1.3;color:#111}
+h1{font-size:26pt;font-weight:500;text-align:center}
+.contact{text-align:center;font-size:10pt;margin:2px 0 6px}
+a{color:#0b4f8a;text-decoration:none}
+.rule{border-top:1px solid #222;margin:2px 0 4px}
+h2{font-size:11.2pt;font-weight:700;margin-top:7px}
+.row{display:flex;justify-content:space-between;align-items:baseline}
+.sub{font-style:italic}
+ul{list-style:"–  ";margin:2px 0 3px 14px}
+li{padding-left:0;margin-bottom:1px}
+.proj{margin-top:4px}
+.small{font-size:10pt;font-weight:400}
+p.sum{margin-top:3px}
+</style></head><body>
+<h1>Komal Jha</h1>
+<div class="contact"><a href="mailto:komaljha1504@gmail.com">komaljha1504@gmail.com</a> &nbsp;|&nbsp; <a href="https://github.com/Komaljha1504">GitHub</a> &nbsp;|&nbsp; <a href="https://www.linkedin.com/in/komaljha1504">LinkedIn</a> &nbsp;|&nbsp; <a href="https://komal-jha.vercel.app">Portfolio</a></div>
+<div class="rule"></div>
+<p class="sum">Final-year Computer Science student at VIT Vellore targeting <b>AI Engineer</b> roles. Builds, evaluates and deploys <b>machine-learning</b> systems, from <b>PyTorch transfer learning</b> with <b>explainability (Grad-CAM)</b> to <b>scikit-learn</b> pipelines with rigorous <b>cross-validation</b>, backed by strong software engineering in <b>Python</b> and a frontend internship at <b>Tech Mahindra</b>.</p>
+
+<h2>Education</h2><div class="rule"></div>
+<div class="row"><span><b>Vellore Institute of Technology</b>, Vellore &mdash; <i>B.Tech in Computer Science (CGPA: 7.51)</i></span><b>2023 &ndash; 2027</b></div>
+<div class="row"><span><b>Swarajya Senior Secondary School</b>, Alwar &mdash; <i>Class XII (77.8%)</i></span><b>2023</b></div>
+<div class="row"><span><b>Saint Francis School B.Deoghar</b>, Deoghar &mdash; <i>Class X (95.4%)</i></span><b>2021</b></div>
+
+<h2>Experience</h2><div class="rule"></div>
+<div class="row"><span><b>Tech Mahindra</b>, Navi Mumbai</span><b>May 2025 &ndash; July 2025</b></div>
+<div class="sub">Frontend Development Intern &nbsp;(7-week summer internship)</div>
+<ul>
+<li><b>Contributed</b> to the frontend of a Corporate Banking Solutions application for a PSU bank.</li>
+<li><b>Developed</b> and <b>debugged</b> UI components using <b>Angular</b>, <b>TypeScript</b>, <b>HTML</b> and <b>CSS</b>.</li>
+<li><b>Resolved</b> styling issues across existing screens to improve UI consistency and responsiveness.</li>
+<li><b>Collaborated</b> with mentors and team members to deliver enhancements aligned with business requirements.</li>
+<li><b>Followed</b> <b>Agile</b> practices and collaborative workflows in an enterprise codebase.</li>
+<li><b>Gained</b> exposure to corporate software workflows and collaborative development practices.</li>
+</ul>
+
+<h2>Projects</h2><div class="rule"></div>
+
+<div class="proj"><div class="row"><span><b>Dental X-ray Caries Classifier</b> &nbsp;<span class="small">| <a href="https://github.com/Komaljha1504/dental-xray-classifier">Code</a> &middot; <a href="https://komal-dental-xray.streamlit.app">Live demo</a></span></span><b>2026</b></div>
+<div class="sub">Deep-learning image classifier with explainable heatmaps for panoramic dental X-rays</div>
+<div><b>Tech Stack:</b> Python, PyTorch, torchvision, OpenCV, NumPy, scikit-learn, Streamlit</div>
+<ul>
+<li><b>Fine-tuned</b> ResNet-18 via <b>transfer learning</b> on 5,000 X-rays; reached <b>ROC-AUC 0.74</b> on 750 unseen images.</li>
+<li><b>Implemented Grad-CAM</b> from scratch to explain every prediction and verify the model focuses on the teeth.</li>
+<li><b>Preprocessed</b> images (224&times;224, ImageNet normalisation) with <b>augmentation</b> and a <b>stratified 70/15/15</b> split.</li>
+<li><b>Trained</b> with <b>Adam</b>, <b>LR scheduling</b> and <b>early stopping</b>, freezing early layers to train 2&times; faster on CPU.</li>
+<li><b>Evaluated</b> with accuracy, precision, recall, F1, confusion matrix and <b>bootstrap 95% CIs</b>.</li>
+<li><b>Audited</b> the data, removed a <b>source confound</b>, and documented limitations honestly.</li>
+<li><b>Tested</b> a 224&times;448 aspect-ratio input, disproved the hypothesis (AUC 0.69), and kept the stronger model.</li>
+<li><b>Deployed</b> a live <b>Streamlit</b> demo returning class probabilities and a Grad-CAM overlay per upload.</li>
+</ul></div>
+
+<div class="proj"><div class="row"><span><b>Heart Disease Prediction Pipeline</b> &nbsp;<span class="small">| <a href="https://github.com/Komaljha1504/heart-disease-ml-pipeline">Code</a> &middot; <a href="https://komal-heart-disease.streamlit.app">Live demo</a></span></span><b>2026</b></div>
+<div class="sub">End-to-end tabular ML pipeline on the UCI Heart Disease dataset with an interactive risk dashboard</div>
+<div><b>Tech Stack:</b> Python, scikit-learn, XGBoost, Pandas, NumPy, Matplotlib, Altair, Streamlit</div>
+<ul>
+<li><b>Performed</b> EDA and <b>imputed</b> missing values, then <b>encoded</b> and <b>scaled</b> features inside a <b>leak-free pipeline</b>.</li>
+<li><b>Engineered</b> 4 clinical features and tested each by <b>ablation</b> against the baseline.</li>
+<li><b>Compared</b> 5 models incl. <b>XGBoost</b> under identical repeated <b>stratified CV</b> (5-fold &times; 3 repeats).</li>
+<li><b>Tuned</b> the top 2 with <b>nested CV</b>; best model reached <b>ROC-AUC 0.92 &plusmn; 0.04</b> and <b>85.8% accuracy</b>.</li>
+<li><b>Explained</b> predictions with <b>permutation importance</b> and per-patient factor attributions.</li>
+<li><b>Reported</b> negative results honestly: tuning and engineered features gave no measurable gain.</li>
+<li><b>Deployed</b> a live, interactive <b>Streamlit</b> app with a risk gauge and a full results dashboard.</li>
+</ul></div>
+
+<h2>Skills</h2><div class="rule"></div>
+<ul>
+<li><b>Languages:</b> Python, Java, JavaScript, SQL, C++, C</li>
+<li><b>ML &amp; Deep Learning:</b> PyTorch, torchvision, scikit-learn, XGBoost, Transfer Learning, CNNs, Grad-CAM</li>
+<li><b>Data &amp; Evaluation:</b> Pandas, NumPy, Matplotlib, Cross-Validation, Hyperparameter Tuning, ROC-AUC, Feature Importance</li>
+<li><b>Web &amp; Backend:</b> Angular, React, Node.js, Express, REST APIs, MongoDB, PostgreSQL, Redis</li>
+<li><b>Tools &amp; Platforms:</b> Git, Streamlit, Gradio, Postman, Vercel, Render</li>
+<li><b>Core Concepts:</b> Data Structures &amp; Algorithms, OOP, System Design, Agile</li>
+</ul>
+
+<h2>Certifications</h2><div class="rule"></div>
+<div class="row"><span><b>AWS Certified Cloud Practitioner</b> &mdash; Amazon Web Services</span><b>2026</b></div>
+<div class="row"><span><b>Data Structures &amp; Algorithms</b> &mdash; Udemy</span><b>2026</b></div>
+</body></html>
